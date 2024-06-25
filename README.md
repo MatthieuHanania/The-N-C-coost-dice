@@ -1,3 +1,16 @@
+# The N C coost dice
+
+Matthieu Hanania
+
+## The problem
+
+**You have N rolls of a die. You can chose to stop at any time, and the value of the game is determined by the value of the die on the roll you chose to stop at.**
+
+**Each roll have a cost C**
+
+**Determine the expected value of the game for the optimal strategy for any given N and C**
+
+## Solution
 To start, we study the simpliest cases with with C = 0  
 E(1,0) = (1+2+3+4+5+6)/6 = 3.5  
 
@@ -26,3 +39,10 @@ E(N,0) = $\frac{⌊E(N-1,0)⌋}{6} * ⌈E(N-1,0)⌉ + \frac{6-⌊E(N-1,0)⌋}{6}
 We can generalise with the cost C. At each new roll, a cost is applied. 
 
 E(N,C) = $\frac{⌊E(N-1,0)⌋}{6} * ⌈E(N-1,0)⌉ + \frac{6-⌊E(N-1,0)⌋}{6} * \frac{⌈E(N-1,0)⌉+6}{2} - C$
+
+## Simulation
+
+We simulate the problem in python.  
+For E(4,1) we got   
+[3.5, 4.25, 4.666666666666666, 4.944444444444444]  
+That are the same results ah the previous calculations.
